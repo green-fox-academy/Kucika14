@@ -1,0 +1,36 @@
+#block { 
+    border: 15px solid rgb(066, 133, 244);
+    margin: 5px;
+    padding: 0px;
+    width: 300px;
+    background-color: blue;
+}
+#block2 {
+    border: 15px solid rgb(066, 133, 244);
+    margin: 5px;
+    padding: 0px;
+    width: 300px;
+    background-color: blue;
+} 
+.box {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center; color: white;
+    line-height: 2em;
+    font-size: 36px;
+    display: block;
+    padding: 50px;
+    block-size: 50%;
+    margin: 0px;
+}
+#a {
+    background: rgb(230, 118, 118);
+}
+#b {
+    background: rgb(230, 118, 118);
+}
+#c {
+    background: rgb(169, 230, 230);
+}
+#d {
+    background: rgb(169, 230, 230);
+}
