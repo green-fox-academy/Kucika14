@@ -1,0 +1,23 @@
+* {    
+    color: white;
+    padding: 15px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif
+}
+p {
+    background-color: rgb(12, 235, 222);
+    border: 10px;
+    width: 125px;
+    line-height: 125px;
+    border-radius: 100px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+}
+.first :first-child {
+    background-color: rgb(185, 012, 235);
+}
+.second :last-child {
+    background-color: rgb(235, 190, 012);
+}
