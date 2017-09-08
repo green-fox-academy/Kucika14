@@ -6,7 +6,7 @@ body {
     display: block;
     background-color: green;
     width: 622px;
-    height: 589px;
+    height: 700px;
     margin: 7px auto;  
     /* padding: 11px; */
 }
@@ -25,7 +25,7 @@ body {
 .second {
     display: inline-block;
     width: 295px;
-    height: 327px;
+    height: 450px;
     vertical-align: top;
 }
 .input {
@@ -33,6 +33,7 @@ body {
     border: solid black;
     width: 139.5px;
     height: 45px;
+    /* margin-top: auto; */
 }
 .bigger {
     display: block;
@@ -44,9 +45,23 @@ body {
 .third {
     display: inline-block;
     width: 295px;
-    height: 327px;
+    height: 450px;
 }
 .fourth {
     width: 607px;
     height: 138px;  
+}
+#birth {
+    width: 40px;
+}
+#radio {
+    /* width: 40px; */
+}
+.one {
+    display: inline-block;
+    /* width: 20px; */
+}
+.two {
+    display: inline-block;
+    /* width: 20px; */
 }
