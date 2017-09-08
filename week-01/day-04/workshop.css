@@ -28,9 +28,16 @@ body {
 .input {
     display: inline-block;
     border: solid black;
-    width: 138px;
+    width: 139.5px;
     height: 45px;
     margin-top: 40%;
+}
+.bigger {
+    display: block;
+    border: solid black;
+    width: 290px;
+    height: 45px;
+    margin-top: 10%;
 }
 .third {
     display: inline-block;
