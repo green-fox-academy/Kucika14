@@ -1,0 +1,29 @@
+body {
+    background-color: grey;
+}
+.main {
+    display: block;
+    background-color: green;
+    width: 622px;
+    height: 589px;
+    margin: 7px auto;    
+}
+.box {
+    display: inline-block;
+    background-color: yellow;
+    border: solid red; size: 9px;
+    padding: 11px;
+    margin: 7px auto;
+}
+.first {
+    width: 622px;
+    height: 33px;
+}
+.second {
+    width: 622px;
+    height: 327px;
+}
+.third {
+    width: 622px;
+    height: 138px;    
+}
