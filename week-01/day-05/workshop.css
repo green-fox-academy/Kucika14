@@ -18,9 +18,9 @@ body {
 }
 .first {
     width: 607px;
-    height: 33px;
+    height: 80px;
     font-size: 16px;
-    text-align: left;
+    margin-top: 0px;
 }
 .second {
     display: inline-block;
@@ -49,5 +49,4 @@ body {
 .fourth {
     width: 607px;
     height: 138px;  
-    margin-top: 30px; 
 }
