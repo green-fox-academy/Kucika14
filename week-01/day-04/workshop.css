@@ -16,13 +16,21 @@ body {
     margin: 3px;
 }
 .first {
-    width: 622px;
+    width: 607px;
     height: 33px;
 }
 .second {
     display: inline-block;
     width: 295px;
     height: 327px;
+    vertical-align: top;
+}
+.input {
+    display: inline-block;
+    border: solid black;
+    width: 138px;
+    height: 45px;
+    margin-top: 40%;
 }
 .third {
     display: inline-block;
@@ -30,6 +38,7 @@ body {
     height: 327px;
 }
 .fourth {
-    width: 622px;
-    height: 138px;    
+    width: 607px;
+    height: 138px;  
+    margin-top: 30px; 
 }
