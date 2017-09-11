@@ -1,0 +1,33 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px;
+}
+body {
+    background: rgb(152, 146, 151);
+}
+.testbox {
+    width: 100%;
+    max-width: 960px;
+    margin: 0px auto;
+}
+.flex-containers {
+    display: flex;  
+}
+.box {
+    height: 200px;
+    min-width: 200px;
+    float: left;
+    text-align: center;
+}
+.one {
+    background: red;
+}
+.two {
+    background: blue;
+}
+.three {
+    background: green;
+}
+.four {
+    background: pink;
+}

@@ -36,7 +36,7 @@ body {
     /* margin-top: auto; */
 }
 .bigger {
-    display: block;
+    display: inline-block;
     border: solid black;
     width: 290px;
     height: 125px;
@@ -52,16 +52,11 @@ body {
     height: 138px;  
 }
 #birth {
-    width: 40px;
-}
-#radio {
-    /* width: 40px; */
+    width: 60px;
 }
 .one {
     display: inline-block;
-    /* width: 20px; */
 }
 .two {
     display: inline-block;
-    /* width: 20px; */
 }
