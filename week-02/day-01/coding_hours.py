@@ -7,3 +7,9 @@
 # Print the percentage of the coding hours in the semester if the average
 # work hours weekly is 52
 
+i = (17*(5*6))
+average = 17*52
+percentage = i / average *100
+print("An attendee code: " + str(i) + " hours in a semester!")
+str(i / average *100) + "%"
+print(str(percentage //1) + "%")
