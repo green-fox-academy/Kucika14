@@ -8,3 +8,7 @@
 #  John Doe
 #  31
 #  1.87
+
+print('Máté Ákos')
+print('26')
+print('1,87')
