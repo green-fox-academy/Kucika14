@@ -56,5 +56,11 @@ out3 = ""
 # set out3 to "Time out"
 # otherwise set out3 to "Run Forest Run!"
 
+if d%4 and time < 200:
+    out3="check"
+elif d%4 and time > 200:
+    out3="Time out"
+else:
+    out3="Run Forest Run!"
 
 print(out3)
