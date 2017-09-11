@@ -12,3 +12,16 @@
 #
 # It should print: Sausage party
 # If no girls are coming, regardless the count of the people
+girl=int(input('How many girls are there?: '))
+boy=int(input('How many boys are there?: '))
+
+if girl == boy and girl+boy >= 20:
+    print('The party is exellent!')
+elif girl <= 0:
+    print('Sausage party')
+elif girl+boy >= 20:
+    print('Quite cool party!')
+elif girl+boy < 20:
+    print('Average party...')
+else:
+    print('Where the hell are you?!?!?')
