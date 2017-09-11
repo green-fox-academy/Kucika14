@@ -4,6 +4,7 @@ b = 526
     
 
 
+a, b = str(b), str(a)
 
 print(a)
 print(b)
