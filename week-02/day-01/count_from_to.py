@@ -11,9 +11,11 @@
 # 3
 # 4
 # 5
-number1 = int(input('pls enter a number'))
-number2 = int(input('pls enter another one'))
-while number1 < number2:
+number1 = int(input('pls enter a number: '))
+number2 = int(input('pls enter another one: '))
+while number1 >= number2:
     print('the second number should be bigger')
-if number1 in range(number2):
-    print (str(number1))
+    number2 = int(input('pls enter the second number again: '))
+if number1 < number2:
+    for i in range(number1,number2):
+        print(i)
