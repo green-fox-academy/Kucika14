@@ -3,7 +3,7 @@
 # - Reverse the order of the elements in `aj`
 # - Print the elements of the reversed `aj`
 
-aj = [3, 4, 5, 6, 7,45,667,89,123]
+aj = [3, 4, 5, 6, 7]
 
 def reverse(text):
     output = []
