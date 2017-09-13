@@ -9,13 +9,21 @@ students = [
 
 # print(students[0]'candies'])
 sum_candy = 0
-def candy_counter():
-    for i in range(len(students)):
-        sum_candy += (students[i]['candies'])
-        return sum_candy
-        # print(students[i]['candies'])
+def sum_of_candies(students):
+    candy_counter = 0
+    for student in students:
+        candy_counter += student['candies']
+    return candy_counter
 
-print(candy_counter())
+
+def sum_of_people_that_has_less_than_5_candies(students):
+    sum_of_ages = 0
+    for student in students:
+        if student["candies"] < 5:
+            sum_of_ages += student["age"]
+    return students
+
+print(sum_of_people_that_has_less_than_5_candies(students))
 # create a function that takes a list of students and prints: 
 # - how many candies are owned by students
 
