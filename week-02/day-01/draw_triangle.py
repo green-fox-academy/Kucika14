@@ -7,5 +7,9 @@
 # ****
 #
 # The triangle should have as many lines as the number was
-triangle = '*\n''**\n''***\n''****\n'
-print(triangle)
+number = int(input('pls enter a number: '))
+output = "*"
+for i in range(1,number+1):
+    output = output * i
+    print(output)
+    output = "*"
