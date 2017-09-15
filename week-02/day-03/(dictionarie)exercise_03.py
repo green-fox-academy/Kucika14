@@ -28,13 +28,14 @@ def client_balance(balance):
     client = all_info(accounts)
     print(client['balance'])
     trasfer_to = input('Please enter who do you want to trasfer: ')
-    return i
+    if client['client_name'] == transfer_to['client_name']:
+        trasfer_from['client_name'] += transfer_to['client_name']
+        transfer_to['client_name'] -= trasfer_from['client_name']
+        
+    return client
 
 def transfer(amout):
-    for i in all_info(accounts):
-        if client['client_name'] == transfer_to['client_name']:
-            amount =     
-        
+    for i in client_balance(accounts):
 
 #     
 # def name_of_client():
