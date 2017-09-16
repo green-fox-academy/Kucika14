@@ -1,21 +1,24 @@
-main_palindrome = str(input('Please enter something: '))
 
-def reverse(text):
-    output = ""
-    check_list = ""
-    for i in range(len(text)-1, -1, -1):
-        output += text[i]
-    check_list = text + output
-    return check_list
+def palindrome(letters):
+        if letters == letters[::-1]:
+            return True
+        return False
+
+def bruteForceSearch(letters):
+    palindoromeList = [] 
+    for i in range(0, len(letters) - 2):
+        for j in range(i + 2, len(letters)):
+            candidate = letters[i:j + 1]
+            if palindrome(candidate):
+                palindoromeList.append(candidate)
+
+    return palindoromeList
+
+def __main():
+    sentence = str(input('pls enter something: '))
+
+    # palindrome(sentence)
+    print(bruteForceSearch(sentence))
 
 
-def palindrome_searcher(palindrome):
-    palindrome1 = reverse(palindrome)
-    for i in palindrome1:
-        if i in range(len(palindrome)-1, -3) == i in range(len(palindrome1)-1, -3):
-            print(i)
-    
-
-
-
-print(palindrome_searcher(main_palindrome))
+__main()
