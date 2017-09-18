@@ -1,6 +1,6 @@
 try:
-    my_file = open("my lines.txt", "r")
+    my_file = open("my-file.txt", "r")
     for line in my_file:
-        print(my_file.readline())
+        print(line)
 except IOError:
     print("Unable to read file: my-file.txt")
