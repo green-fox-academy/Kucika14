@@ -5,7 +5,6 @@ def adder(num):
     if num <= 1:
         return num
     else:
-        print(num)
-        return adder(num -1)+adder(num -2)
+        return adder(num -1) + num
         
-print(adder(10))
+print(adder(15))
