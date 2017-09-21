@@ -4,13 +4,12 @@
 
 
 def sum_digits(num):
-    log10 = len(str(num))-1
-    if len(str(num)) == 1:
+    if num == 0:
         return num
     else:
-        return num//(10**log10) + sum_digits(num% 10 ** log10)
+        return num%10 + sum_digits(num//10)
 
 
 
 
-print(sum_digits(126))
+print(sum_digits(3546))
