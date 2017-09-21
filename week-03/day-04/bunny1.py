@@ -8,4 +8,4 @@ def bunny_ear_counter(bunny):
         return (bunny_ear_counter(bunny -1)) + 2
 
 
-print(bunny_ear_counter(50))
+print(bunny_ear_counter(12))
