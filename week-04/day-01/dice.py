@@ -24,9 +24,17 @@ class Dice(object):
 
 
 dice = Dice()
-print(dice.get_current())
-dice.roll()
-print(dice.get_current())
-dice.reroll(3)
-print(dice.get_current(3))
-print(dice.get_current())
+def dice_to_six(dice):
+    for i in range(len(dice.dice)):
+        while dice.get_current(i) != 6:
+            dice.reroll(i)
+
+
+
+# print(dice.get_current())
+dice_to_six(dice)
+print(dice.dice)
+# print(dice.get_current())
+# dice.reroll(3)
+# print(dice.get_current(3))
+# print(dice.get_current())
