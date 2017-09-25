@@ -6,10 +6,10 @@
 # fibonacci number, with n=0 representing the start of the sequence.
 
 
-def adder(num):
+def fibonacci(num):
     if num <= 1:
         return num
     else:
         return adder(num -1) + adder(num -2)
         
-print(adder(4))
+print(fibonacci(4))

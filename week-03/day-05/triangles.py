@@ -7,7 +7,7 @@ canvas = Canvas(root, width = 650, height = 650)
 canvas.pack()
 
 def draw_triangle(x, y, size):
-    time.sleep(0.0020)
+    time.sleep(0.00001)
     canvas.update()
     canvas.create_polygon(x,y, x+size,y, x+size/2,y+size, fill="", outline="black")
 
