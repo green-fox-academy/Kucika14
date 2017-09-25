@@ -12,9 +12,7 @@ class Counter(object):
     def reset(self):
         self.number = self.init_number
 
-counter = Counter(40)
-counter.add(5)
-counter.add()
+counter = Counter()
 counter.add()
 counter.reset()
 print(counter.get())
