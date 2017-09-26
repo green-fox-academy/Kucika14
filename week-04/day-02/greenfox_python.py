@@ -29,6 +29,9 @@ class Student(Person):
         self.gender + ' from '+ self.previous_organization + ' who skipped ' + \
         str(self.skipped_days) + ' days from the course already.')
 
+    def skip_days(self, number_of_days):
+        self.skipped_days += number_of_days
+
 
 class Mentor(Person):
 
