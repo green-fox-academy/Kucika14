@@ -22,7 +22,6 @@ class Garden(object):
 class Plant(object):
     def __init__(self, color):
         self.water = 0
-
     
 
 class Tree(Plant):
