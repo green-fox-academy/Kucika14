@@ -64,10 +64,28 @@ class Sponsor(Person):
     def get_goal(self):
         print("Hire brilliant junior software developers.")
 
-class Pallida
+
+class PallidaClass(object):
+    def __init__(self, class_name):
+        self.class_name = class_name
+        self.students = []
+        self.mentors = []
 
 
+    def add_student(self, student):
+        studnets = []
+        self.students.append(Student)
 
-sponsor = Sponsor()
-sponsor.hire()
-sponsor.introduce().get_goal()
+    def add_mentor(self, mentor):
+        mentors = []
+        self.mentors.append(Mentor)
+    
+    def info(self):
+        print('Pallida ' + self.class_name+' class has ' + \
+        str(len(self.students)) +' students and ' + \
+        str(len(self.mentors)) +  ' mentors.')
+
+bela = Student()
+sponsor = PallidaClass('Rabbit')
+sponsor.add_student(bela)
+sponsor.info()
