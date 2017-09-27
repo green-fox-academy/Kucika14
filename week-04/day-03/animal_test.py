@@ -18,9 +18,8 @@ class AnimalTest(unittest.TestCase):
 
     def test_play(self):
         my_animal.play()
-        my_animal.play()
-        self.assertEqual(my_animal.thirst, 50)
-        self.assertEqual(my_animal.hunger, 51)
+        self.assertEqual(my_animal.thirst, 49)
+        self.assertEqual(my_animal.hunger, 50)
 
 if __name__ == '__main__':
     unittest.main()
