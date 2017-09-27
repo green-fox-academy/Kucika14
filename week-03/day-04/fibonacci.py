@@ -10,6 +10,6 @@ def fibonacci(num):
     if num <= 1:
         return num
     else:
-        return adder(num -1) + adder(num -2)
+        return fibonacci(num -1) + fibonacci(num -2)
         
 print(fibonacci(4))
