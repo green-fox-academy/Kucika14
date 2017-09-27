@@ -1,13 +1,21 @@
-from anagram import Anagramma
+from count_letters import Counter
 import unittest
-my_text = Anagramma()
+my_word = Counter()
 class AnagramTest(unittest.TestCase):
 
-    def test_anagram_true(self):
-        self.assertTrue(my_text.compare_anagram('oro'), 'oro')
+    def test_empty_letters(self):
+        self.assertEqual(my_word.count_letters(""), {})
 
-    def test_anagram_false(self):
-        self.assertTrue(my_text.compare_anagram('oro'), 'kecske')
+    def test_one_letters(self):
+        self.assertEqual(my_word.count_letters('a'), {'a':1})
+
+    def test_two_letters(self):
+        self.assertEqual(my_word.count_letters('ab'), {'a':1, 'b':1})
+
+    def test_same_letters(self):
+        self.assertEqual(my_word.count_letters('aa'), {'a':2})
+
+
 
 if __name__ == '__main__':
     unittest.main()
