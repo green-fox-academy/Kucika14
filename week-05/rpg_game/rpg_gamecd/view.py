@@ -60,7 +60,7 @@ class Map:
     def move(self, dx, dy):
         self.canvas.move(self.hero, dx*72, dy*72)
 
-
+    def get_wall_coords
 
 # Tell the canvas that we prepared a function that can deal with the key press events
 
