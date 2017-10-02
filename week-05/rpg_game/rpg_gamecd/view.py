@@ -9,7 +9,10 @@ class Map:
         self.canvas = Canvas(self.root, width=self.size+self.hud, height=self.size,bg="yellow",bd=0)
         self.floor = PhotoImage(file="floor.png")
         self.wall = PhotoImage(file="wall.png")
-        self.char = PhotoImage(file="hero-down.png")
+        self.char_down = PhotoImage(file="hero-down.png")
+        self.char_up = PhotoImage(file="hero-up.png")
+        self.char_right = PhotoImage(file="hero-right.png")
+        self.char_left = PhotoImage(file="hero-left.png")
         self.draw_map()
         self.canvas.pack()
         self.root.bind("<KeyPress>", self.on_key_press)
@@ -27,20 +30,27 @@ class Map:
                     self.canvas.create_image(x+36, y+36, image=self.wall)
                 
     def on_key_press(self, e):
+        coords = self.canvas.coords(self.hero)
+        self.canvas.delete(self.hero)
         if ( e.keysym == 'Up' ):
-            self.move(0,-10)
+            self.hero = self.canvas.create_image(coords[0], coords[1], image=self.char_up)
+            self.move(0,-72)
         elif( e.keysym == 'Down' ):
-            self.move(0,10)
+            self.hero = self.canvas.create_image(coords[0], coords[1], image=self.char_down)
+            self.move(0,72)
         elif( e.keysym == 'Right'):
-            self.move(10,0)
+            self.hero = self.canvas.create_image(coords[0], coords[1], image=self.char_right)
+            self.move(72,0)
         elif( e.keysym == 'Left'):
-            self.move(-10,0)
+            self.hero = self.canvas.create_image(coords[0], coords[1], image=self.char_left)
+            self.move(-72,0)
+            
             
     def display(self):
         self.root.mainloop()
 
     def base_shape(self, x, y):
-        self.hero = self.canvas.create_image(x+36, y+36, image=self.char)
+        self.hero = self.canvas.create_image(x+36, y+36, image=self.char_down)
 
     def move(self, dx, dy):
         self.canvas.move(self.hero, dx, dy )
