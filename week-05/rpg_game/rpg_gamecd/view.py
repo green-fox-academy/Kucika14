@@ -33,27 +33,32 @@ class Map:
         coords = self.canvas.coords(self.hero)
         self.canvas.delete(self.hero)
         if ( e.keysym == 'Up' ):
-            self.hero = self.canvas.create_image(coords[0], coords[1], image=self.char_up)
-            self.move(0,-72)
+            self.hero = self.canvas.create_image(coords[0], coords[1], anchor=NW, image=self.char_up)
+            if coords[1] > 0:
+                self.move(0,-1)
         elif( e.keysym == 'Down' ):
-            self.hero = self.canvas.create_image(coords[0], coords[1], image=self.char_down)
-            self.move(0,72)
+            self.hero = self.canvas.create_image(coords[0], coords[1], anchor=NW, image=self.char_down)
+            if coords[1] < 648:
+                self.move(0,1)
         elif( e.keysym == 'Right'):
-            self.hero = self.canvas.create_image(coords[0], coords[1], image=self.char_right)
-            self.move(72,0)
+            self.hero = self.canvas.create_image(coords[0], coords[1], anchor=NW, image=self.char_right)
+            if coords[0] < 648:
+                self.move(1,0)
         elif( e.keysym == 'Left'):
-            self.hero = self.canvas.create_image(coords[0], coords[1], image=self.char_left)
-            self.move(-72,0)
-            
+            self.hero = self.canvas.create_image(coords[0], coords[1], anchor=NW, image=self.char_left)
+            if coords[0] > 0:
+                self.move(-1,0)
+    
+           
             
     def display(self):
         self.root.mainloop()
 
     def base_shape(self, x, y):
-        self.hero = self.canvas.create_image(x+36, y+36, image=self.char_down)
+        self.hero = self.canvas.create_image(x, y, anchor=NW, image=self.char_down)
 
     def move(self, dx, dy):
-        self.canvas.move(self.hero, dx, dy )
+        self.canvas.move(self.hero, dx*72, dy*72)
 
 
 
