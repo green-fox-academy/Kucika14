@@ -18,8 +18,4 @@ class AnagramTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
-<<<<<<< HEAD
     unittest.main()
-=======
-    unittest.main()
->>>>>>> fba09605827c4eb9d1abb1ef30b5629aafb7f8fd

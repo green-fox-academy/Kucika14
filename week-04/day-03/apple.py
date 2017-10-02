@@ -5,5 +5,5 @@ class Apples(object):
 
 
 
-my_apple = Apples()
-my_apple.get_apple("pig")
+# my_apple = Apples()
+# my_apple.get_apple("apple")
