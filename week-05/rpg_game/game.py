@@ -1,4 +1,5 @@
 from view import *
-my_map=Map()
-my_map.base_shape(0,0)
-my_map.display()
+start_game=Display()
+start_game.draw_hero(0,0)
+start_game.draw_skeletons(72,72)
+start_game.starter()
