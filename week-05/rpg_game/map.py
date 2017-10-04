@@ -14,3 +14,9 @@ class Map:
             [0,1,1,1,0,0,0,0,1,0],
             [0,0,0,1,0,1,1,0,0,0]
         ]
+
+    def get_wall_coords(self,x ,y):
+        x = int(x//72)
+        y = int(y//72)
+        return self.game_map_source[y][x]
+           

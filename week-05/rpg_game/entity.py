@@ -16,7 +16,7 @@ class Hero(Entities):
 
 class Skeleton:
     def __init__(self):
-        super().__init__(20, 20, 2, 5)
+        super().__init__(2, 2, 2, 5)
 
 class Boss:
     def __init__(self):
