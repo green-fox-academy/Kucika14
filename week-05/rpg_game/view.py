@@ -1,6 +1,7 @@
 from tkinter import *
 from map import Map
 from random import randint
+from entity import Hero
 
 
 
@@ -9,8 +10,8 @@ class Display:
         self.size = 720
         self.root = Tk()
         self.root.configure(background ='black')
-        self.hud = 120
-        self.canvas = Canvas(self.root, width=self.size+self.hud, height=self.size,bg="grey",bd=0)
+        self.hud = 200
+        self.canvas = Canvas(self.root, width=self.size+self.hud, height=self.size,bg="green",bd=0)
         self.floor = PhotoImage(file="floor.png")
         self.wall = PhotoImage(file="wall.png")
         self.char_down = PhotoImage(file="hero-down.png")
@@ -19,7 +20,8 @@ class Display:
         self.char_left = PhotoImage(file="hero-left.png")
         self.skeleton = PhotoImage(file="skeleton.png")
         self.boss = PhotoImage(file="boss.png")
-        
+        self.hero = Hero()
+        self.game_hud()
         self.canvas.pack()
         self.canvas.focus_set()
 
@@ -36,7 +38,14 @@ class Display:
     def draw_entity(self, image, coords):
         self.entity = self.canvas.create_image(coords[0]*72, coords[1]*72, anchor=NW, image=image)
         return self.entity
-            
+
+    def game_hud(self):
+        self.canvas.create_text(820,50,fill="white", font="Times 12 bold",
+        text="HERO STATS" + "\n" +
+        "Defense Point: " + str(self.hero.dp) + "\n" +
+        "Strike Point: " + str(self.hero.sp) + "\n" +
+        "Max HP: " + str(self.hero.max_hp))
+
     def starter(self):
         self.root.mainloop()
 

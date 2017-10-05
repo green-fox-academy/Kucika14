@@ -16,11 +16,11 @@ class Game:
         self.my_view.root.bind("<KeyPress>", self.on_key_press)
         self.my_view.starter()
 
-
        
     def draw_hero(self, x, y):
         self.hero = self.my_view.draw_entity(self.my_view.char_down, [x, y])
         self.chars_on_screen.append(self.hero)
+
     
     def draw_enemy(self):
         self.skeleton1 = self.my_view.draw_entity(self.my_view.skeleton, self.random_spawn())
@@ -47,6 +47,9 @@ class Game:
                 break
         return its_occupied
         
+    def battle(self, x, y):
+        if self.is_occupied(x,y):
+            self.my_view.game_hud()
 
     def move(self, dx, dy):
         self.my_view.canvas.move(self.hero, dx*72, dy*72)
@@ -58,6 +61,7 @@ class Game:
             self.my_view.canvas.itemconfigure(self.hero, image=self.my_view.char_up)
             if coords[1] > 0 and not self.game_map.get_wall_coords(coords[0], coords[1]-72) == 1:
                 self.move(0,-1)
+                self.battle(coords[0], coords[1])
         elif( e.keysym == 'Down' ):
             self.my_view.canvas.itemconfigure(self.hero, image=self.my_view.char_down)
             if coords[1] < 648 and not self.game_map.get_wall_coords(coords[0], coords[1]+72) == 1:
