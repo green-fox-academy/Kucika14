@@ -19,6 +19,7 @@ class Display:
         self.char_left = PhotoImage(file="hero-left.png")
         self.skeleton = PhotoImage(file="skeleton.png")
         self.boss = PhotoImage(file="boss.png")
+        
         self.canvas.pack()
         self.canvas.focus_set()
 
