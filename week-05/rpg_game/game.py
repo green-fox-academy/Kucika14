@@ -30,6 +30,9 @@ class Game:
         self.skeleton3 = self.my_view.draw_entity(self.my_view.skeleton, self.random_spawn())
         self.chars_on_screen.append(self.skeleton3)
         self.boss = self.my_view.draw_entity(self.my_view.boss, self.random_spawn())
+        self.chars_on_screen.append(self.boss)
+        print(self.chars_on_screen)
+
     
 
     def random_spawn(self):
@@ -47,9 +50,19 @@ class Game:
                 break
         return its_occupied
         
-    def battle(self, x, y):
+    def meet_with_someone(self, x, y):
         if self.is_occupied(x,y):
-            self.my_view.game_hud()
+            for i in self.chars_on_screen:
+                print(i)
+                if i == 142:
+                    self.my_view.skeleton_hud(self.skeleton1)
+                elif i == 143:
+                    self.my_view.skeleton_hud(self.skeleton2)
+                elif i == 144:
+                    self.my_view.skeleton_hud(self.skeleton3)
+                elif i == 145:
+                    self.my_view.boss_hud(self.boss)
+                    
 
     def move(self, dx, dy):
         self.my_view.canvas.move(self.hero, dx*72, dy*72)
@@ -60,19 +73,22 @@ class Game:
         if ( e.keysym == 'Up' ):
             self.my_view.canvas.itemconfigure(self.hero, image=self.my_view.char_up)
             if coords[1] > 0 and not self.game_map.get_wall_coords(coords[0], coords[1]-72) == 1:
+                self.meet_with_someone(coords[0], coords[1]-72)
                 self.move(0,-1)
-                self.battle(coords[0], coords[1])
         elif( e.keysym == 'Down' ):
             self.my_view.canvas.itemconfigure(self.hero, image=self.my_view.char_down)
             if coords[1] < 648 and not self.game_map.get_wall_coords(coords[0], coords[1]+72) == 1:
+                self.meet_with_someone(coords[0], coords[1]+72)
                 self.move(0,1)
         elif( e.keysym == 'Right'):
             self.my_view.canvas.itemconfigure(self.hero, image=self.my_view.char_right)
             if coords[0] < 648 and not self.game_map.get_wall_coords(coords[0]+72, coords[1]) == 1:
+                self.meet_with_someone(coords[0]+72, coords[1])
                 self.move(1,0)
         elif( e.keysym == 'Left'):
             self.my_view.canvas.itemconfigure(self.hero, image=self.my_view.char_left)
             if coords[0] > 0 and not self.game_map.get_wall_coords(coords[0]-72, coords[1]) == 1:
+                self.meet_with_someone(coords[0]-72, coords[1])
                 self.move(-1,0)
 
 game = Game()

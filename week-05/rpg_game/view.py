@@ -1,7 +1,7 @@
 from tkinter import *
 from map import Map
 from random import randint
-from entity import Hero
+from entity import Hero, Skeleton, Boss
 
 
 
@@ -21,7 +21,9 @@ class Display:
         self.skeleton = PhotoImage(file="skeleton.png")
         self.boss = PhotoImage(file="boss.png")
         self.hero = Hero()
-        self.game_hud()
+        self.warlock = Boss()
+        self.bones = Skeleton()
+        self.hero_hud()
         self.canvas.pack()
         self.canvas.focus_set()
 
@@ -39,12 +41,26 @@ class Display:
         self.entity = self.canvas.create_image(coords[0]*72, coords[1]*72, anchor=NW, image=image)
         return self.entity
 
-    def game_hud(self):
+    def hero_hud(self):
         self.canvas.create_text(820,50,fill="white", font="Times 12 bold",
         text="HERO STATS" + "\n" +
         "Defense Point: " + str(self.hero.dp) + "\n" +
         "Strike Point: " + str(self.hero.sp) + "\n" +
         "Max HP: " + str(self.hero.max_hp))
+
+    def skeleton_hud(self, enemy):
+        self.canvas.create_text(820,200, fill="white", font="Times 12 bold",
+        text="SKELETON STATS" + "\n" +
+        "Defense Point: " + str(self.bones.dp) + "\n" +
+        "Strike Point: " + str(self.bones.sp) + "\n" +
+        "Max HP: " + str(self.bones.max_hp))
+
+    def boss_hud(self, enemy):
+        self.canvas.create_text(820,350, fill="white", font="Times 12 bold",
+        text="BOSS STATS" + "\n" +
+        "Defense Point: " + str(self.warlock.dp) + "\n" +
+        "Strike Point: " + str(self.warlock.sp) + "\n" +
+        "Max HP: " + str(self.warlock.max_hp))
 
     def starter(self):
         self.root.mainloop()
