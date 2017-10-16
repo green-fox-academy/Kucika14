@@ -1,0 +1,54 @@
+.small {
+    display: flex;    
+    height: 30px;
+    width: 78%;
+    border: 3px solid black;
+    border-bottom: 0;
+    border-radius: 30px 30px 0 0;
+}
+
+.large {
+    display: flex;    
+    height: 800px;
+    width: 72%;
+    border: 3px solid black;
+    justify-content: flex-start;
+    border-radius: 0 0 30px 30px;
+    flex-direction: column;
+    padding: 3%;
+}
+
+.purple {
+    display: flex;
+    background-color: purple;
+    list-style: none;
+    padding: 5px;
+    margin: 0;  
+}
+
+.box {
+    margin: 0;
+}
+
+.item {
+    background-color: #3FECEC;
+    height: 30px;
+    width: 80px;
+    margin: 5px;
+}
+
+.second {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.yellow {
+    background-color: yellow;
+    flex-grow: 2;
+}
+
+.green {
+    background-color: #11EB11;
+    flex-grow: 1;
+}
