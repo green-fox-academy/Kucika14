@@ -23,7 +23,6 @@ class Display:
         self.hero = Hero()
         self.warlock = Boss()
         self.bones = Skeleton()
-        self.hero_hud()
         self.canvas.pack()
         self.canvas.focus_set()
 
@@ -41,26 +40,37 @@ class Display:
         self.entity = self.canvas.create_image(coords[0]*72, coords[1]*72, anchor=NW, image=image)
         return self.entity
 
-    def hero_hud(self):
+    def hero_hud(self, entity):
+        rect = self.canvas.create_rectangle(820 - 100, 0, 820 + 100, 50 + 100, fill='green')
         self.canvas.create_text(820,50,fill="white", font="Times 12 bold",
+
         text="HERO STATS" + "\n" +
-        "Defense Point: " + str(self.hero.dp) + "\n" +
-        "Strike Point: " + str(self.hero.sp) + "\n" +
-        "Max HP: " + str(self.hero.max_hp))
+        "Defense Point: " + str(entity.dp) + "\n" +
+        "Strike Point: " + str(entity.sp) + "\n" +
+        "Max HP: " + str(entity.max_hp) + "\n" +
+        "Current HP: " + str(entity.current_hp))
 
     def skeleton_hud(self, enemy):
+        rect = self.canvas.create_rectangle(820 - 100, 200 - 100, 820 + 100, 200 + 100, fill='green')
         self.canvas.create_text(820,200, fill="white", font="Times 12 bold",
+
         text="SKELETON STATS" + "\n" +
-        "Defense Point: " + str(self.bones.dp) + "\n" +
-        "Strike Point: " + str(self.bones.sp) + "\n" +
-        "Max HP: " + str(self.bones.max_hp))
+        "Defense Point: " + str(enemy.dp) + "\n" +
+        "Strike Point: " + str(enemy.sp) + "\n" +
+        "Max HP: " + str(enemy.max_hp) + "\n" + 
+        "Current HP: " + str(enemy.current_hp))
+
 
     def boss_hud(self, enemy):
+        rect = self.canvas.create_rectangle(820 - 100, 350 - 100, 820 + 100, 350 + 100, fill='green')
+       
+
         self.canvas.create_text(820,350, fill="white", font="Times 12 bold",
         text="BOSS STATS" + "\n" +
-        "Defense Point: " + str(self.warlock.dp) + "\n" +
-        "Strike Point: " + str(self.warlock.sp) + "\n" +
-        "Max HP: " + str(self.warlock.max_hp))
+        "Defense Point: " + str(enemy.dp) + "\n" +
+        "Strike Point: " + str(enemy.sp) + "\n" +
+        "Max HP: " + str(enemy.max_hp) + "\n" + 
+        "Current HP: " + str(enemy.current_hp))
 
     def starter(self):
         self.root.mainloop()

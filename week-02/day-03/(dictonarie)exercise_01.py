@@ -21,8 +21,9 @@ def sum_of_people_that_has_less_than_5_candies(students):
     for student in students:
         if student["candies"] < 5:
             sum_of_ages += student["age"]
-    return students
+    return sum_of_ages
 
+print(sum_of_candies(students))
 print(sum_of_people_that_has_less_than_5_candies(students))
 # create a function that takes a list of students and prints: 
 # - how many candies are owned by students
