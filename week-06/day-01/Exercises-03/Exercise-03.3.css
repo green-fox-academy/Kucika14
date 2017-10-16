@@ -1,0 +1,17 @@
+.container {
+    display: flex;    
+    height: 300px;
+    flex-grow: 1;
+    background-color: yellow;
+    padding: 0px;
+    justify-content: flex-end;
+}
+
+.item {
+    width: 75px;
+    height: 75px;
+    background-color: purple;
+    margin-left: 10px;
+    align-self: flex-end;
+    list-style: none;
+}
