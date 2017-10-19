@@ -1,0 +1,37 @@
+.plate {
+    display: flex;
+    width: 700px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #313841;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    font-size: 30px;
+    background-color: #1C242B;
+    border: none;
+    color: #D2D3D5;
+    cursor: pointer;
+}
+
+.delete{
+    width: 0px;
+    height: 50px;
+    transition: width 1s, height 1s;
+}
+.delete:hover {
+    width: 150px;
+    background-color: #F34541;
+}
+.green:hover {
+    color: #38BA7D;
+}
+
+.red:hover {
+    color: #F34541;
+}

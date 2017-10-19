@@ -1,0 +1,35 @@
+.container {
+    display: grid;
+    width: 100%;  
+    grid-auto-rows: 280px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, minmax(150px, auto));
+    grid-gap: 10px;
+    background-color: #B02AFF;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #FBFEF6;
+}
+
+.container div {
+    display: flex;
+    font-family: sans-serif;
+    font-size: 35px;
+    align-items: center;
+    justify-content: center;
+}
+
+.left {
+    grid-column: 1 / 2;
+    background-color: #FFD62A;
+}
+
+.ratio {
+    grid-column: 2 / 4;
+    background-color: #51D400;
+}
+
+.right {
+    grid-column: 4 / 5;
+    background-color: #FFD62A;
+}
