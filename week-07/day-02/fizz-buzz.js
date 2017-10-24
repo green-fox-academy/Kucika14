@@ -4,16 +4,15 @@
 // But for multiples of three print “Fizz” instead of the number
 // and for the multiples of five print “Buzz”.
 // For numbers which are multiples of both three and five print “FizzBuzz”.
-let outPut = ''
 
 for (let i = 1; i <= 100; i++) {
-    if (i % 3 === 0) {
-        outPut = 'Fizz';
+    if (i % 5 === 0 && i % 3 === 0) {
+        console.log('FizzBuzz');
     } else if (i % 5 === 0) {
-        outPut = 'Buzz';
-    } else if (i % 5 === 0 && i % 3 === 0); {
-        outPut = 'FizzBuzz';
+        console.log('Buzz');
+    } else if (i % 3 === 0) {
+        console.log('Fizz');
+    } else {
+        console.log(i);
     }
 }
-
-console.log(outPut);
