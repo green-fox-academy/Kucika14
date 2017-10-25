@@ -7,13 +7,13 @@
 
 
 
-let al = 'GreenFox'
+let al = 0;
 
 let greet = function(name) {
-    if (name  === undefined) {
-        console.log('who are you?')
-    } else {
+    if (name) {
         console.log('Greetings dear ' + name)
+    } else {
+        console.log('who are you?')
     }
 }
 
