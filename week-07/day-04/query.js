@@ -19,5 +19,5 @@ noBusiness.forEach(function(e) {
     console.log(e);
 });
 
-let allBizniss = document.querySelectorAll('asteroid');
+let allBizniss = document.querySelectorAll('p');
 alert(allBizniss);
