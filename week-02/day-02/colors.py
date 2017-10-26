@@ -16,4 +16,4 @@ for i in range(3):
     else:
         all_colors.append(["orchid", "violet", "pink", "hot pink"])
 
-print(all_colors[2])
+print(all_colors[0])
