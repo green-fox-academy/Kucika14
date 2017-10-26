@@ -1,0 +1,14 @@
+#clock {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    font-family: 'Pangolin', cursive;
+    font-size: 80px;
+    margin-top: 40px;
+    
+  }
+  
+  html, body {
+    height: 100%;
+  }
+    
