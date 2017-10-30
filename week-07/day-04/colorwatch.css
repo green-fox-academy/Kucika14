@@ -1,14 +1,15 @@
 #clock {
-    text-align: center;
-    position: relative;
-    top: 50%;
-    font-family: 'Pangolin', cursive;
-    font-size: 80px;
-    margin-top: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+  font-size: 120px;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
     
-  }
-  
-  html, body {
-    height: 100%;
-  }
-    
+
+
+
