@@ -16,36 +16,51 @@ function Animal() {
 
 function Farm(slots) {
     this.slots = slots;
-    this.animal = [];
+    this.animals = [];
     for (let i = 0; i < slots; i++) {
-        this.animal.push(new  Animal());
+        this.animals.push(new  Animal());
     }
     this.breed = function() {
-        if (this.animal.length < this.slots) {
-            this.animal.push(new  Animal());
+        if (this.animals.length < this.slots) {
+            this.animals.push(new  Animal());
         }
     }
     this.slaughter = function() {
+        let listOfHunger = [];
+        this.animals.forEach(function(e) {
+            listOfHunger.push(e.hunger);
+        })
+        let leastHungry = Math.min.apply(Math, listOfHunger);
+        this.animals.splice(listOfHunger.indexOf(leastHungry),1);
+
 
     }
     this.progress = function() {
-        this.animal.forEach(function(e){
+        this.animals.forEach(function(e){
             let randomList = [];
-            let randomNumber = Math.random();
             for (let i = 0; i < 3; i++) {
-                randomList.push(randomList);
+                let randomNumber = Math.random();
+                randomList.push(randomNumber);
             }
             if (randomList[0] > 0.5) {
-                Animal.eat();
-            } else if ( randomList[1] > 0.5) {
-                Animal.drink();
-            } else (randomList[2] > 0.5) {
-                Animal.play();
+                e.eat();
+            }
+            if ( randomList[1] > 0.5) {
+                e.drink();
+            }
+            if (randomList[2] > 0.5) {
+                e.play();
             }
         })
     }
 }
 
-let farm = Farm(20)
+let myFarm = new Farm(20)
 
-farm.breed
+myFarm.breed()
+myFarm.progress()
+myFarm.progress()
+myFarm.progress()
+myFarm.progress()
+myFarm.progress()
+myFarm.slaughter()
