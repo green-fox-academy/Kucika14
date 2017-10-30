@@ -8,7 +8,19 @@ function Animal() {
         this.thrist -= 1;
     }
     this.play = function() {
-        this.hunger -= 1;
-        this.thrist -= 1;
+        this.hunger += 1;
+        this.thrist += 1;
+    }
+}
+
+
+function Farm() {
+    this.slots = slots;
+    this.animal = [];
+    for (let i = 0; i < slots; i++) {
+        this.animal.push(new  Animal());
+    }
+    this.breed = function() {
+        if
     }
 }
