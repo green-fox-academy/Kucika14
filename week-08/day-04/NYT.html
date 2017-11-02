@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>kaposzta</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        let body = document.querySelector('body')
+
+        let apollo = new XMLHttpRequest();
+        let url = apollo.open('GET', 'https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=1fc7a7dbfaee49a7b9012a13b9bee39b&begin_date=19690719&end_date=19690720', true);
+        apollo.onload = function()  {
+            articlesearch();
+        };
+        apollo.send(null);
+        
+        let articlesearch = function() {
+            let nyTimesArticle = JSON.parse(apollo.response);
+            let mainArticle = nyTimesArticle.response.docs;
+            console.log(mainArticle)
+            mainArticle.forEach(function(e) {
+                let headLine = document.createElement('h1');
+                body.appendChild(headLine);
+                headLine.textContent = e.headline.main;
+                let snippet = document.createElement('p');
+                body.appendChild(snippet);
+                snippet.textContent = e.snippet;
+                let publicDate = document.createElement('p');
+                body.appendChild(publicDate);
+                publicDate.textContent = e.pub_date;
+                let link = document.createElement('a');
+                body.appendChild(link);
+                link.setAttribute('href', e.web_url);
+                link.textContent = 'clikc here for further info';
+            });
+        }
+    </script>
+</body>
+</html>
