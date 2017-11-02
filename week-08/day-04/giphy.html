@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>kecske</title>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+        'use strict';
+        let body = document.querySelector('body')
+
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=eERz3h3URhiB56IzRD33vQAqY9iIIQHM&q=star wars&limit=16&offset=0&rating=G&lang=en', true);
+        xhr.onload = function()  {
+            myGif()
+        };
+        xhr.send(null);
+        
+
+        let myGif = function() {
+            let thumbnails = JSON.parse(xhr.response);
+            for (let i = 0; i < 16; i++) {
+                let image = document.createElement('img')
+                image.setAttribute('src', thumbnails.data[i].images.downsized_still.url)
+                image.addEventListener('click', function(){
+                   image.setAttribute('src', thumbnails.data[i].images.downsized.url)
+                })
+                body.appendChild(image)
+                console.log(thumbnails.data[i].images.downsized_still.url)
+            }
+        }
+
+
+        
+    </script>
+</body>
+</html>
