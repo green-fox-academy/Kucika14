@@ -12,7 +12,7 @@ let prison = function(name) {
         visit_counter: 0,
         visit: function() {
             if (fugitive === '') {
-                console.log('Nobody is here anymore')
+                console.log('Scofield gone, Bellick is angry now!')
             } else {
             this.visit_counter++;
             console.log(fugitive + ' is visited ' + this.visit_counter + ' time(s)')
@@ -20,15 +20,16 @@ let prison = function(name) {
         },
         escape: function() {
             fugitive = '';
-            console.log('BREAKING NEWS, ' + fugitive + ' escaped the prison');
+            nameOfFuggitive = name
+            console.log('BREAKING NEWS, ' + nameOfFuggitive + ' escaped the prison again');
         }
     }
 }
 
 
-const alcatraz = prison('Sad Panda');
+const  foxRiver= prison('Michael Scofield');
 
-alcatraz.visit() // Sad Panda is visited 1 time(s)
-alcatraz.visit() // Sad Panda is visited 2 time(s)
-alcatraz.escape() // BREAKING NEWS, Sad Panda escaped the prison
-alcatraz.visit() // Nobody is here anymore
+foxRiver.visit()
+foxRiver.visit()
+foxRiver.escape()
+foxRiver.visit()
