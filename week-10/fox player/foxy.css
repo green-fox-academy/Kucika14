@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    width: 800px;
+    height: 800px;
+}
+
+section {
+    display: flex;
+    width: 400px;
+    height: 400px;
+}
+
+.left {
+    background-color: blue;
+}
+
+.right {
+    background-color:red;
+}
+
+.top {
+    width: 200px;
+    height: 200px;
+}
+.logo {
+    background-color: yellow;
+}
+
+.media {
+    background-color: pink;
+}
