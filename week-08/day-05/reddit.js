@@ -11,6 +11,8 @@ let doRequest = function(callback) {
     x.send(null);
 }
 
+
+
 function handleData(data){
     let wholeReddit = JSON.parse(data);
     let reddit = wholeReddit.posts;
@@ -26,4 +28,8 @@ function handleData(data){
     
 }
 
+
 doRequest(handleData)
+
+
+let postOnReddit = function()

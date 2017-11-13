@@ -1,6 +1,7 @@
 'use strict'
 
 const body = document.querySelector('body')
+
 let bookstore = new XMLHttpRequest();
 
 let ajax = function(method, data, response, callback) {

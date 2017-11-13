@@ -1,8 +1,7 @@
 'use strict';
 
-const getApple = function() {
+const appleTree = function() {
     return 'apple'
 }
 
-
-module.exports = getApple;
+module.exports = appleTree;
