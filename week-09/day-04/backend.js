@@ -24,15 +24,27 @@ app.get('/', function(request, response) {
   response.sendFile(__dirname + '/index.html');
 });
 
+let getDatabase = function(tableName, what, callback) {
+  let searchQuery = 'SELECT' + what + 'FROM' + tableName;
+  connection.query(searchQuery, function(error, results, fields) {
+    callback(results, what)
+  })
+}
+
+let handleSqlData = function(sqlResults, fieldName) {
+  let returnData = []
+  sqlResults.forEach(function(e) {
+    returnData.push(element[fieldName])
+  })
+}
+
 app.get('/data', function(request, response) {
-    connection.query(`SELECT book_name, aut_name, cate_descrip, pub_name, book_price FROM book_mast
-                      JOIN author ON author.aut_id = book_mast.aut_id
-                      JOIN category ON category.cate_id = book_mast.cate_id
-                      JOIN publisher ON publisher.pub_id = book_mast.pub_id`, function (error, results) {
-      if (error) throw error;
-      response.send(results);
-  });
-});
-
-
+  let data = []
+  connection.query('select book_name from book_mast;', function(error, response, fields) {
+    data = results.map(function(element) {
+      response.send(data)
+    })
+  })
+}
+   
 app.listen(8080);
