@@ -1,0 +1,60 @@
+* {
+    border: 1px solid black;
+}
+container {
+    width: 800px;
+    height: 500px;
+    display: grid;
+    grid-template-rows: 1fr 80px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:"left right"
+                        "footer footer";
+}
+
+.left {
+    grid-area: left;
+    display: grid;
+    grid-template-rows: 90px 30px 1fr;
+    grid-template-columns: 1fr 120px;
+    grid-template-areas:"logo album"
+                        "add album"
+                        "playlists playlists";
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.add {
+    grid-area: add;
+}
+
+.album_pic {
+    grid-area: album;
+}
+
+.playlist {
+    grid-area: playlist;
+}
+
+.right {
+    grid-area: right;
+}
+
+footer {
+    grid-area: footer;
+    background-color:FFFFFF;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+audio {
+    align-self: center;
+    background: FFFFFF;
+    width: 780px;
+}
+
+audio::-webkit-media-controls-play-button {
+    margin: 0 2rem;
+}
