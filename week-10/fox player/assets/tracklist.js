@@ -9,7 +9,7 @@ let trackInfo = function(){
 
 let trackInfoData = (data) => {
     data.forEach(function(e) {
-        let track = document.createElement('p');
+        let track = document.createElement('li');
         trackList.appendChild(track);
         track.textContent = e.id;
         track.textContent += ". " + e.title;

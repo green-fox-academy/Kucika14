@@ -31,4 +31,11 @@ app.get('/trackinfo', function(request, response) {
     response.json(trackList)
 })
 
+app.post('/trackinfo', function(request, response) {
+    console.log(request.body)
+    response.json({'status': 'done'})
+})
+
+
+
 app.listen(8080, () => console.log('server running'));

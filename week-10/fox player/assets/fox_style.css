@@ -25,18 +25,26 @@ container {
 
 .logo {
     grid-area: logo;
+    background: url(foxplayer.png) no-repeat;
+    
 }
 
 .add {
     grid-area: add;
 }
 
+.plus {
+    width: 18px;
+    height: 18px;
+    margin-left: 171px;
+}
+
 .album_pic {
     grid-area: album;
 }
 
-.playlist {
-    grid-area: playlist;
+.playlists {
+    grid-area: playlists;
 }
 
 .right {
@@ -77,6 +85,30 @@ audio {
     border: none;
 }
 
+.forward {
+    width: 25px;
+    height: 25px;
+    background: url(forward.svg) center no-repeat;
+    border: none;
+}
+
+
 audio::-webkit-media-controls-play-button {
     margin: 0 2rem;
+}
+
+li {
+    list-style: none;
+}
+
+.active {
+    background: rgb(131, 177, 131);
+}
+
+
+.user-input {
+    display: block;
+    background-color: green;
+    width: 100px;
+    height: 100px;
 }
