@@ -1,9 +1,11 @@
 'use strict';
 
-let music = document.querySelector('.playlists')
-let foxPlayer = new XMLHttpRequest();
+let playTrack = document.querySelector('.playlists')
+let trackList = document.querySelector('.tracklist')
+
 
 let ajax = function(method, data, response, callback) {
+    let foxPlayer = new XMLHttpRequest();
     data = data ? data : null;
     foxPlayer.open(method, 'http://localhost:8080' + response);
     foxPlayer.setRequestHeader('Content-Type', 'application/json');
@@ -16,17 +18,32 @@ let ajax = function(method, data, response, callback) {
 };
 
 let playLists = function(){
-    ajax('GET', '', '/playlists', handleData);
-} 
+    ajax('GET', '', '/playlists', playListData);
+}
 
-let handleData = (data) => {
+let playListData = (data) => {
     console.log(data)
     data.forEach(function(e) {
+        let play = document.createElement('p');
+        playTrack.appendChild(play);
+        play.textContent = e.title;
+    })
+}
+
+let trackInfo = function(){
+    ajax('GET', '', '/trackinfo', trackInfoData);
+}
+
+let trackInfoData = (data) => {
+    data.forEach(function(e) {
         let track = document.createElement('p');
-        music.appendChild(track);
-        track.textContent = e.title;
+        trackList.appendChild(track);
+        track.textContent = e.id;
+        track.textContent += ". " + e.title;
     })
 }
 
 
+
 playLists()
+trackInfo()

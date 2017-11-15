@@ -21,5 +21,14 @@ app.get('/playlists', function(request, response) {
     response.json(playLists)
 })
 
+app.get('/trackinfo', function(request, response) {
+    let trackList = [
+        { "id": 1, "title": "birkát cserélek búzáért", "system": 1},
+        { "id": 2, "title": "három az egyben váltok követ bármire", "system": 0},
+        { "id": 3, "title": "Driving", "system": 0},
+        { "id": 5, "title": "Fox house", "system": 0},
+    ]
+    response.json(trackList)
+})
 
 app.listen(8080, () => console.log('server running'));

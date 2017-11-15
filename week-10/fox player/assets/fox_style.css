@@ -1,5 +1,5 @@
 * {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 container {
     width: 800px;
@@ -21,6 +21,8 @@ container {
                         "playlists playlists";
 }
 
+
+
 .logo {
     grid-area: logo;
 }
@@ -39,6 +41,19 @@ container {
 
 .right {
     grid-area: right;
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas:"current-track"
+                        "tracklist";
+}
+
+
+.current-track {
+    grid-area: current-track;
+}
+
+.tracklist {
+    grid-area: tracklist;
 }
 
 footer {
@@ -53,6 +68,13 @@ audio {
     align-self: center;
     background: FFFFFF;
     width: 780px;
+}
+
+.revind {
+    width: 25px;
+    height: 25px;
+    background: url(revind.svg) center no-repeat;
+    border: none;
 }
 
 audio::-webkit-media-controls-play-button {
