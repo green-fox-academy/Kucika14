@@ -108,7 +108,13 @@ li {
 
 .user-input {
     display: block;
-    background-color: green;
-    width: 100px;
+    background-color: grey;
+    width: 200px;
+    height: 80px;
+}
+
+.userbox {
+    width: 230px;
     height: 100px;
+    background-color: gold;
 }

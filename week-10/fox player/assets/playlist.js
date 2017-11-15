@@ -33,10 +33,13 @@ let create = () => {
     let addPlayList = document.querySelector('.plus')
     let body = document.querySelector('body')
     addPlayList.addEventListener('click' , function() {
-        let inputElement = document.createElement('input')
-        inputElement.classList.add('user-input')
-        body.appendChild(inputElement)
-
+        let div = document.createElement('div')
+        div.classList.add('userbox')
+        body.appendChild(div)
+        let inputElement = `<input type="text" placeholder="kecskeeeeeee!!!!!!!!">
+                            <button class="ok"></button>
+                            <button class="cancel"></button>`
+        div.innerHTML = inputElement;
     })
 }
 
